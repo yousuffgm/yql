@@ -15,7 +15,7 @@
 	var ids= [];
         var str;
 	for each (result in feed.item) {
-		ids = ids.push(result.id);
+		ids.push(result.id);
 	}
 	str = ids.toString();
 	response.object = str;
