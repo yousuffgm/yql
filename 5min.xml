@@ -17,8 +17,10 @@
 	for each (result in feed.item) {
 		ids.push(result.id);
 	}
-	str = ids.toString();
-	response.object = str;
+	
+	str = 'select * from rss where url="http://api.5min.com/video/list/info.xml?video_ids=' + ids.toString()+'"';
+	var feed1 =  y.query(str,{}).results;
+	response.object = feed1;
       ]]></execute>      
     </select>    
   </bindings>  
