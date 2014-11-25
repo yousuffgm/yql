@@ -21,7 +21,7 @@
 		ids.push(result.id);	
 	}
 	str = ids.toString();
-	response.object = str
+	response.object = str;
       ]]></execute>      
     </select>    
   </bindings>  
