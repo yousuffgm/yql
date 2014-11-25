@@ -15,13 +15,13 @@
   	'select * from rss where url=@url',
  	 {url: request.url}
 	).results;
-	var ids= [];
+	var ids= "";
         var str;
 	for each (result in feed.item) {
-		ids.push(result.id);	
+		ids = ids + result.id + ','
 	}
 	str = ids.toString();
-	response.object = str;
+	response.object = ids;
       ]]></execute>      
     </select>    
   </bindings>  
