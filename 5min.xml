@@ -12,13 +12,13 @@
       </inputs>  
       <execute><![CDATA[           
 	var feed = y.query('select * from rss where url=@url',{url: request.url}).results;
-	var ids= "";
+	var ids= [];
         var str;
 	for each (result in feed.item) {
-		ids = ids + result.id + ',';
+		ids = ids.push(result.id);
 	}
 	str = ids.toString();
-	response.object = '<stories>' +  ids + '</stories>';
+	response.object = str;
       ]]></execute>      
     </select>    
   </bindings>  
